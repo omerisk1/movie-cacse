@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { searchParam } from "@/utils/types";
 
 const initialState = {
   data: {},
@@ -11,12 +12,17 @@ const apiKey = process.env.API_KEY;
 
 export const fetchMovies: any = createAsyncThunk(
   "fecthMovies",
-  async (searchQuery: string) => {
-    searchQuery = searchQuery ? searchQuery : "pokemon";
-    const res = await axios.get(
-      `http://www.omdbapi.com/?s=${searchQuery}&apikey=${apiKey}`
-    );
-    return res.data;
+  async (searchQuery: searchParam) => {
+    console.log(searchQuery, "redux");
+    const searchTerm = searchQuery.search ? searchQuery.search : "Pokemon";
+    try {
+      const res = await axios.get(
+        `http://www.omdbapi.com/?type=${searchQuery.type}&y=${searchQuery.year}&s=${searchTerm}&page=${searchQuery.page}&apikey=${apiKey}`
+      );
+      return res.data;
+    } catch (error) {
+      throw new Error("Error fecthing movies");
+    }
   }
 );
 const movieSlice = createSlice({
