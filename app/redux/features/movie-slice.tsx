@@ -38,7 +38,7 @@ const movieSlice = createSlice({
         (state.data = action.payload),
         (state.error = "");
     });
-    builder.addCase(fetchMovies.rejected, (state, action) => {
+    builder.addCase(fetchMovies.rejected, (state) => {
       (state.loading = false), (state.error = "Error fecthing movies");
     });
   },

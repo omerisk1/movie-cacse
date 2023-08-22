@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '~bootstrap/scss/bootstrap';
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background: rgb(97,132,217);
+background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, rgba(255,188,0,1) 100%);
+}
+.card-badge{
+  padding: 5px;
+  color: white;
+  border-radius: 6px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-weight: bold;
+}
+.orange{
+  background-color: orange;
+}
+.green{
+  background-color: green;
+}
+.blue{
+  background-color: blue;
+}
+.red{
+  background-color: red
+}
+.card-image{
+  border-radius: 6px;
+  width: 275px !important;
+  height: 375px !important;
+}
+.card-image-container{
+  position: relative;
+}
+.movie-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.movie-card-title {
+  font-size: 16px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card-container{    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  min-height: 520px;
+  overflow: hidden;
+  
+}
+.css-1sazv7p-MuiStack-root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-area{
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+.select-area{
+  display: flex;
+  justify-content: right;
+}
+.search-comp{
+  position: relative;
+}
+.s-logo{
+  position: absolute;
+  left: 17px;
+  top: 8px;
+  width: 18px;
+}
+
+@media only screen and (max-width: 769px) {
+  .select-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .search-comp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+}
