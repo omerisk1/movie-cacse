@@ -13,7 +13,6 @@ const apiKey = process.env.API_KEY;
 export const fetchMovies: any = createAsyncThunk(
   "fecthMovies",
   async (searchQuery: searchParam) => {
-    console.log(searchQuery, "redux");
     const searchTerm = searchQuery.search ? searchQuery.search : "Pokemon";
     try {
       const res = await axios.get(

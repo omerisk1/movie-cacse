@@ -8,7 +8,12 @@ export default function MovieDetailCard({ data }: { data: any }) {
   const router = useRouter();
   return (
     <Container className="card-detail-container">
-      {data === null ? (
+      {/* <div className="loading-circle">
+        <Box sx={{ display: "flex" }}>
+          <CircularProgress />
+        </Box>
+      </div> */}
+      {data === null || data === undefined ? (
         <div className="loading-circle">
           <Box sx={{ display: "flex" }}>
             <CircularProgress />
