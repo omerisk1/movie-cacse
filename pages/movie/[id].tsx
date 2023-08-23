@@ -3,12 +3,13 @@ import "../../app/globals.scss";
 import axios from "axios";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { detailMovie } from "../../utils/types";
 
 export default function MovieDetail() {
   const pathname = usePathname();
   const id = pathname ? pathname.substring(7) : null;
 
-  const [movieData, setMovieData] = useState<any>(null);
+  const [movieData, setMovieData] = useState<detailMovie>();
 
   useEffect(() => {
     if (id) {

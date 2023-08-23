@@ -19,3 +19,14 @@ export type movie = {
     Year: string,
     imdbID:string
 }
+
+export type detailMovie = {
+    Title: string,
+    Runtime: string,
+    Type: string,
+    Actors: string,
+    imdbRating: string,
+    Plot: string,
+    Released: string,
+    Countery: string
+}
