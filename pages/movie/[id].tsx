@@ -13,7 +13,7 @@ export default function MovieDetail() {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://www.omdbapi.com/?i=${id}&apikey=${process.env.API_KEY}`)
+        .get(`https://www.omdbapi.com/?i=${id}&apikey=${process.env.API_KEY}`)
         .then((response) => {
           setMovieData(response.data);
         })

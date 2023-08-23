@@ -17,7 +17,7 @@ export const fetchMovies: any = createAsyncThunk(
     const searchTerm = searchQuery.search ? searchQuery.search : "Pokemon";
     try {
       const res = await axios.get(
-        `http://www.omdbapi.com/?type=${searchQuery.type}&y=${searchQuery.year}&s=${searchTerm}&page=${searchQuery.page}&apikey=${apiKey}`
+        `https://www.omdbapi.com/?type=${searchQuery.type}&y=${searchQuery.year}&s=${searchTerm}&page=${searchQuery.page}&apikey=${apiKey}`
       );
       return res.data;
     } catch (error) {
