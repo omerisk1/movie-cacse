@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,10 +18,15 @@
 }
 
 body {
-  background: rgb(97,132,217);
-background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, rgba(255,188,0,1) 100%);
+  background: rgb(97, 132, 217);
+  background: linear-gradient(
+    90deg,
+    rgba(97, 132, 217, 1) 0%,
+    rgba(9, 121, 16, 1) 39%,
+    rgba(255, 188, 0, 1) 100%
+  );
 }
-.card-badge{
+.card-badge {
   padding: 5px;
   color: white;
   border-radius: 6px;
@@ -30,24 +35,24 @@ background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, 
   right: 15px;
   font-weight: bold;
 }
-.orange{
+.orange {
   background-color: orange;
 }
-.green{
+.green {
   background-color: green;
 }
-.blue{
+.blue {
   background-color: blue;
 }
-.red{
-  background-color: red
+.red {
+  background-color: red;
 }
-.card-image{
+.card-image {
   border-radius: 6px;
   width: 275px !important;
   height: 375px !important;
 }
-.card-image-container{
+.card-image-container {
   position: relative;
 }
 .movie-card-content {
@@ -67,10 +72,10 @@ background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, 
   white-space: nowrap;
   font-weight: 600;
 }
-.movie-card-year{
+.movie-card-year {
   font-weight: 600;
 }
-.card-container{    
+.card-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,40 +87,40 @@ background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, 
   margin-bottom: 30px;
   min-height: 520px;
   overflow: hidden;
-  
 }
-.css-1sazv7p-MuiStack-root{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.pagination-area {
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    nav {
+      padding: 5px;
+      background: white;
+      border-radius: 10px;
+    }
+  }
 }
-.css-1oj2twp-MuiPagination-root{
-  padding: 5px;
-    background: white;
-    border-radius: 10px;
-}
-.search-area{
+.search-area {
   display: flex;
   align-items: center;
   background-color: white;
   padding: 10px;
   border-radius: 10px;
-  
 }
-.select-area{
+.select-area {
   display: flex;
   justify-content: right;
 }
-.search-comp{
+.search-comp {
   position: relative;
 }
-.s-logo{
+.s-logo {
   position: absolute;
   left: 17px;
   top: 8px;
   width: 18px;
 }
-.error-message{
+.error-message {
   display: flex;
   justify-content: center;
   margin-top: 150px;
@@ -130,7 +135,7 @@ background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, 
   transform: scale(1.05);
   cursor: pointer;
 }
-.loading-circle{
+.loading-circle {
   background-color: white;
   padding: 5px;
   width: 50px;
@@ -140,54 +145,53 @@ background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, 
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.detail-area{
+.detail-area {
   background-color: white;
   padding: 20px;
   margin-top: 100px;
   border-radius: 6px;
   margin-bottom: 100px;
 }
-.detail-image{
+.detail-image {
   width: 350px;
   height: 500px;
   border-radius: 8px;
 }
-.detail-info{
+.detail-info {
   padding: 20px;
-  p{
+  p {
     font-weight: 700;
   }
 }
-.home-btn{
+.home-btn {
   width: 100px;
   background-color: black;
   color: white;
   height: 50px;
 }
-.home-btn-row{
+.home-btn-row {
   display: flex;
   justify-content: center;
 }
 
 @media only screen and (max-width: 769px) {
-  .select-area{
+  .select-area {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
   }
-  .search-comp{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  .detail-img{
+  .search-comp {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .detail-info{
+  .detail-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .detail-info {
     text-align: center;
   }
 }
