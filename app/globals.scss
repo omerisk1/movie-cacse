@@ -65,6 +65,10 @@ background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-weight: 600;
+}
+.movie-card-year{
+  font-weight: 600;
 }
 .card-container{    
   display: flex;
@@ -84,6 +88,11 @@ background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.css-1oj2twp-MuiPagination-root{
+  padding: 5px;
+    background: white;
+    border-radius: 10px;
 }
 .search-area{
   display: flex;
@@ -106,6 +115,59 @@ background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, 
   top: 8px;
   width: 18px;
 }
+.error-message{
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  color: white;
+  font-weight: bold;
+}
+.movie-card {
+  transition: transform 500ms;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.loading-circle{
+  background-color: white;
+  padding: 5px;
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.detail-area{
+  background-color: white;
+  padding: 20px;
+  margin-top: 100px;
+  border-radius: 6px;
+  margin-bottom: 100px;
+}
+.detail-image{
+  width: 350px;
+  height: 500px;
+  border-radius: 8px;
+}
+.detail-info{
+  padding: 20px;
+  p{
+    font-weight: 700;
+  }
+}
+.home-btn{
+  width: 100px;
+  background-color: black;
+  color: white;
+  height: 50px;
+}
+.home-btn-row{
+  display: flex;
+  justify-content: center;
+}
 
 @media only screen and (max-width: 769px) {
   .select-area{
@@ -119,5 +181,13 @@ background: linear-gradient(90deg, rgba(97,132,217,1) 0%, rgba(9,121,16,1) 39%, 
     justify-content: center;
     align-items: center;
     
+  }
+  .detail-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .detail-info{
+    text-align: center;
   }
 }

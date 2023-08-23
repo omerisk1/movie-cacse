@@ -14,10 +14,14 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import MovieCard from "@/components/MovieCard";
 import { Container, Row, Col } from "react-bootstrap";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const movies = useSelector((state: any) => state.movies);
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const [searchParam, setSearchParam] = useState<searchParam>({
     search: "",
@@ -101,27 +105,50 @@ export default function Home() {
             </FormControl>
           </Col>
         </Row>
-        <Row className="mt-5">
-          {Object.keys(movies.data).length !== 0 &&
-            movies.data?.Search?.map((movie: movie) => {
-              return (
-                <Col key={movie.imdbID} lg={4} md={6} sm={12}>
-                  <MovieCard movie={movie} />
-                </Col>
-              );
-            })}
-        </Row>
-
-        <Row className="mt-5 mb-5 pagination-area">
-          <Stack spacing={2}>
-            <Pagination
-              count={pageCount}
-              color="primary"
-              onChange={handlePageChange}
-              page={searchParam.page}
-            />
-          </Stack>
-        </Row>
+        {movies.loading && (
+          <div className="loading-circle">
+            <Box sx={{ display: "flex" }}>
+              <CircularProgress />
+            </Box>
+          </div>
+        )}
+        {movies.data.Error && !movies.loading ? (
+          <div className="error-message">
+            Aradığınız sonuç bulunamadı veya çok fazla veri bulunuyor.
+          </div>
+        ) : (
+          <Row className="mt-5">
+            {Object.keys(movies.data).length !== 0 &&
+              movies.data?.Search?.map((movie: movie) => {
+                return (
+                  <Col
+                    key={movie.imdbID}
+                    lg={4}
+                    md={6}
+                    sm={12}
+                    className="movie-card"
+                    onClick={() => router.push(`movie/${movie.imdbID}`)}
+                  >
+                    <MovieCard movie={movie} />
+                  </Col>
+                );
+              })}
+          </Row>
+        )}
+        {movies.data.Error && !movies.loading ? (
+          ""
+        ) : (
+          <Row className="mt-5 mb-5 pagination-area">
+            <Stack spacing={2}>
+              <Pagination
+                count={pageCount}
+                color="primary"
+                onChange={handlePageChange}
+                page={searchParam.page}
+              />
+            </Stack>
+          </Row>
+        )}
       </Container>
     </>
   );

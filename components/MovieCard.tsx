@@ -35,7 +35,7 @@ export default function MovieCard({ movie }: { movie: movie }) {
 
       <div className="movie-card-content">
         <p className="movie-card-title">{movie.Title}</p>
-        <p>{movie.Year}</p>
+        <p className="movie-card-year">{movie.Year}</p>
       </div>
     </div>
   );
